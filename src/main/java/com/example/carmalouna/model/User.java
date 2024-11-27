@@ -7,11 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-<<<<<<< HEAD
 @Data
-=======
-@Data // creates all getter and setter methods
->>>>>>> b4282c46f423758a6543e1f94692fd81a4e14f98
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
