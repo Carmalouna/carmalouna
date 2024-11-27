@@ -11,27 +11,27 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "user")
+@Table (name = "coach")
 
-public class User {
+public class Coach {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer user_id;
+    private Integer coach_id;
 
-    private String name;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @Column(unique = true)
-    private String email;
+    @Lob
+    private String bio;
 
-    private String passwordHash;
+    @Lob
+    private String expertise;
 
-    private enum user_type {MEMBER, COACH};
+    private enum verification_status {PENDING, VERIFIED, REJECTED};
 
-    private enum account_status {ACTIVE, INACTIVE, PENDING_VERIFICATION};
+    private Integer sessions_per_month;
 
     private LocalDateTime created_at;
 
-    private LocalDateTime last_login;
-
 }
-
