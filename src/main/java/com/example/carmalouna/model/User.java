@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data //creates all getter and setter methods
+@Data // creates all getter and setter methods
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "user")
+@Table(name = "user")
 
 public class User {
     @Id
@@ -25,13 +25,16 @@ public class User {
 
     private String passwordHash;
 
-    private enum user_type {MEMBER, COACH};
+    private enum user_type {
+        MEMBER, COACH
+    };
 
-    private enum account_status {ACTIVE, INACTIVE, PENDING_VERIFICATION};
+    private enum account_status {
+        ACTIVE, INACTIVE, PENDING_VERIFICATION
+    };
 
     private LocalDateTime created_at;
 
     private LocalDateTime last_login;
 
 }
-
